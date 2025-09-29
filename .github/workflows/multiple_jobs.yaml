@@ -8,7 +8,9 @@ jobs:
         run: |
           echo "Hello! Good morning"
           echo "Have a nice day!"
+  
   Daily_timings:
+    needs: Daily_greetings
     runs-on: ubuntu-latest
     steps:
       - name: Daily Dxaily_timings
