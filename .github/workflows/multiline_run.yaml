@@ -1,0 +1,10 @@
+name: Running multiple lines in same step
+on: workflow_dispatch
+jobs:
+  multiline_run:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Daily greetings
+        run: |
+          echo "Hello, good morning"
+          echo "Hello, good afternoon"
