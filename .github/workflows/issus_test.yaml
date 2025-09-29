@@ -1,0 +1,11 @@
+name: First Workflow
+on: 
+  issues:
+    type: [opened]
+jobs:
+  daily-greetings:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Issue info
+        run: echo "${{ github.event.issue.title }}"
+     
