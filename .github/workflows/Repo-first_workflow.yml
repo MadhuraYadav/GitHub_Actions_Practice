@@ -1,0 +1,12 @@
+name: First Workflow
+on: workflow_dispatch
+jobs:
+  daily-greetings:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Welcome Greetings
+        run: echo "Hello, good morning"
+      - name: Goodbye Greetings
+        run: echo "Hey, see you later"
+    
+    
