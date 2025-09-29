@@ -1,0 +1,19 @@
+name: Testing Parallel jobs
+on: push
+jobs:
+  Daily_greetings:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Daily_greetings
+        run: |
+          echo "Hello! Good morning"
+          echo "Have a nice day!"
+  Daily_timings:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Daily Dxaily_timings
+        run: |
+          echo "Morning"
+          echo "Afternoon"
+          echo "Eve"
+          echo "Night"
