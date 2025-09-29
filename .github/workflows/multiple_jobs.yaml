@@ -1,5 +1,5 @@
 name: Testing Parallel jobs
-on: push
+on: [ push, workflow_dispatch]
 jobs:
   Daily_greetings:
     runs-on: ubuntu-latest
