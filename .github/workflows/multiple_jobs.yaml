@@ -6,16 +6,20 @@ jobs:
     steps:
       - name: Daily_greetings
         run: |
-          echo "Hello! Good morning"
-          echo "Have a nice day!"
+          echo "Hello! Good morning, Have a nice day!" > greetings.txt
+      - name: Upload artifact
+        uses: actions/upload-artifacts@v3
+        with:
+          name: greetings
+          path: greetings.txt
   
   Daily_timings:
     needs: Daily_greetings
     runs-on: ubuntu-latest
     steps:
-      - name: Daily Dxaily_timings
-        run: |
-          echo "Morning"
-          echo "Afternoon"
-          echo "Eve"
-          echo "Night"
+      - name: Download artifact
+        uses: actions/download-artifacts@v3
+        with: 
+          name: greetings
+      - name: Check content of artifact
+        run: cat greetings.txt
