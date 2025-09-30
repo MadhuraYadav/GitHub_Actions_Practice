@@ -4,7 +4,7 @@ jobs:
   Daily_greetings:
     runs-on: ubuntu-latest
     outputs: 
-      file_content: ${{ steps.content.file_list.outputs}}
+      file_content: ${{ steps.content.outputs.file_list}}
     steps:
       - name: Daily_greetings
         run: |
