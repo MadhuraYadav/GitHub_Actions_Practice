@@ -8,7 +8,7 @@ jobs:
         run: |
           echo "Hello! Good morning, Have a nice day!" > greetings.txt
       - name: Upload artifact
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: greetings
           path: greetings.txt
@@ -18,7 +18,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Download artifact
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v4
         with: 
           name: greetings
       - name: Check content of artifact
