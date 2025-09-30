@@ -12,7 +12,7 @@ jobs:
           echo "Hi, I need to buy milk, sugar and eggs" > shoppingList.txt
       - name: Output content
         id: content
-        run: ls echo "file_list={}" >> $GITHUB_OUTPUT
+        run: find . -type f | wc -l | echo "file_list={}" >> $GITHUB_OUTPUT
       - name: Upload artifact
         uses: actions/upload-artifact@v4
         with:
