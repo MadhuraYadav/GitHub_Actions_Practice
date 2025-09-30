@@ -3,10 +3,16 @@ on: [ push, workflow_dispatch]
 jobs:
   Daily_greetings:
     runs-on: ubuntu-latest
+    outputs: 
+      file_content: ${{ steps.content.file_list.outputs}}
     steps:
       - name: Daily_greetings
         run: |
           echo "Hello! Good morning, Have a nice day!" > greetings.txt
+          echo "Hi, I need to buy milk, sugar and eggs" > shoppingList.txt
+      - name: Output content
+        id: content
+        run: ls | echo "file_list={}" >> github.outputs
       - name: Upload artifact
         uses: actions/upload-artifact@v4
         with:
@@ -16,7 +22,9 @@ jobs:
   Daily_timings:
     needs: Daily_greetings
     runs-on: ubuntu-latest
-    steps:
+    steps: 
+      - name: Print the files list
+        run: echo ${{ needs.Daily_greetings.files_content.output }}
       - name: Download artifact
         uses: actions/download-artifact@v4
         with: 
