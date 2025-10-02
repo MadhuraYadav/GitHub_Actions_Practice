@@ -12,7 +12,7 @@ jobs:
           echo "Hello! Good morning, Have a nice day!" > $file_name
            
       - name: Upload artifact
-        if: steps.file_gen.output == 'success'
+        if: steps.file_gen.outcome == 'success'
         uses: actions/upload-artifact@v4
         with:
           name: greetings
