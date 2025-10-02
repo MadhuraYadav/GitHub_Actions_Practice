@@ -1,7 +1,7 @@
-name: Controlling Execution Flow
+name: Controlling Execution Flow with if
 on: [ push, workflow_dispatch]
 jobs:
-  Daily_greetings:
+  Controlling_Execution_Flow :
     runs-on: ubuntu-latest
     env:
       file_name: greetings.txt
