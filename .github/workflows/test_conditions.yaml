@@ -9,7 +9,7 @@ jobs:
       - name: Daily_greetings
         id: file_gen
         run: |
-          ech "Hello! Good morning, Have a nice day!" > $file_name
+          echo "Hello! Good morning, Have a nice day!" > $file_name
            
       - name: Upload artifact
         if: steps.file_gen.outcome == 'success'
@@ -17,3 +17,13 @@ jobs:
         with:
           name: greetings
           path: ${{ env.file_name }}
+  
+  Dependent_job:
+    runs-on: ubuntu-latest
+    needs: Controlling_Execution_Flow
+    if: failure()
+    steps:
+      - name: Display output
+        run:
+          echo "Previous job failed"
+  
