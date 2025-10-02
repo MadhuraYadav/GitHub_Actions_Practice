@@ -1,0 +1,19 @@
+name: Controlling Execution Flow
+on: [ push, workflow_dispatch]
+jobs:
+  Daily_greetings:
+    runs-on: ubuntu-latest
+    env:
+      file_name: greetings.txt
+    steps:
+      - name: Daily_greetings
+        id: file_gen
+        run: |
+          echo "Hello! Good morning, Have a nice day!" > $file_name
+           
+      - name: Upload artifact
+        if: steps.file_gen.output == 'success'
+        uses: actions/upload-artifact@v4
+        with:
+          name: greetings
+          path: ${{ env.file_name }}
