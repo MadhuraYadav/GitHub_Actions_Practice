@@ -9,7 +9,7 @@ jobs:
       - name: Daily_greetings
         id: file_gen
         run: |
-          echo "Hello! Good morning, Have a nice day!" > $file_name
+          cho "Hello! Good morning, Have a nice day!" > $file_name
            
       - name: Upload artifact
         if: steps.file_gen.outcome == 'success'
