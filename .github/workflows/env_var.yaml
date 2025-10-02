@@ -9,6 +9,7 @@ jobs:
       - name: Daily_greetings
         run: |
           echo "Hello! Good morning, Have a nice day!" > $file_name
+          echo "$file_name"
       
       - name: Upload artifact
         uses: actions/upload-artifact@v4
