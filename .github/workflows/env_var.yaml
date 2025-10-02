@@ -3,6 +3,7 @@ on: [ push, workflow_dispatch]
 jobs:
   Daily_greetings:
     runs-on: ubuntu-latest
+    environment: stage
     env:
       file_name: greetings.txt
     steps:
@@ -11,6 +12,7 @@ jobs:
           echo "Hello! Good morning, Have a nice day!" > $file_name
           echo "$file_name"
           echo "${{secrets.ACCESS_KEY_ID}}"
+          echo "${{secrets.SECRET_KEY}}"
       
       - name: Upload artifact
         uses: actions/upload-artifact@v4
