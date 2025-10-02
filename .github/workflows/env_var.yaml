@@ -1,0 +1,17 @@
+name: Testing Parallel jobs
+on: [ push, workflow_dispatch]
+jobs:
+  Daily_greetings:
+    runs-on: ubuntu-latest
+    env:
+      file_name: greetings.txt
+    steps:
+      - name: Daily_greetings
+        run: |
+          echo "Hello! Good morning, Have a nice day!" > $file_name
+      
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: greetings
+          path: ${{ env.file_name }}
