@@ -1,5 +1,5 @@
 name: Matrix Demo
-on: workflow_dispatch
+on: [push, workflow_dispatch]
 jobs:
   Matrix_Demo_workflow :
     runs-on: ubuntu-latest
