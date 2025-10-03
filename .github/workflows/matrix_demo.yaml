@@ -1,0 +1,13 @@
+name: Matrix Demo
+on: workflow_dispatch
+jobs:
+  Matrix_Demo_workflow :
+    runs-on: ubuntu-latest
+    strategy:
+      matrix: 
+        echo_var: ["Hello", "Hi", "Konnichiwa", "Namaste"]
+    steps:
+      - name: Daily_greetings
+        run: |
+          echo "${{matrix.echo_var}}! Good morning, Have a nice day!"
+           
