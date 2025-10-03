@@ -5,10 +5,17 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix: 
-        Greet_var: ["Hello", "Hi", "Namaste"]
+        greet_var: ["Hello", "Hi", "Namaste"]
         day_time: ["Morning", "Afternoon", "Evening"]
+        include:
+          - greet_var: "Konnichiwa"
+            day_time: "night"
+            end_greet: "See you soon"
+        exclude:
+          - greet_var: "Namaste"
+            day_time: "Evening"
     steps:
       - name: Daily_greetings
         run: |
-          echo "${{matrix.echo_var}}! Good ${{ matrix.day_time }}, Have a nice day!"
+          echo "${{matrix.greet_var}}! Good ${{ matrix.day_time }}, Have a nice day! ${{matrix.end_greet}}"
            
