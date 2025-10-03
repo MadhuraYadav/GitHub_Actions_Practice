@@ -10,5 +10,5 @@ jobs:
     steps:
       - name: Daily_greetings
         run: |
-          echo "${{matrix.echo_var}}! Good ${{ day_time }}, Have a nice day!"
+          echo "${{matrix.echo_var}}! Good ${{ matrix.day_time }}, Have a nice day!"
            
