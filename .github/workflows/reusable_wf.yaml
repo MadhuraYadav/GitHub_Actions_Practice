@@ -22,4 +22,4 @@ jobs:
           echo " ${{ inputs.greeting_var}}"
       - name: secret fetching
         run: |
-          echo "My little secret ${{secrets.some_secret}}
+          echo "My little secret ${{secrets.some_secret}}"
