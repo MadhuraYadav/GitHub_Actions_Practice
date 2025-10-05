@@ -7,3 +7,4 @@ runs:
       run: |
         echo "Hello"
         echo "How are you?"
+      shell: bash
