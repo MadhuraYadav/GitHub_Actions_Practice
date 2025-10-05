@@ -16,4 +16,4 @@ jobs:
           echo "I am in reusable workflow"
       - name: Input var display
         run: |
-          echo " ${{inputs.greeting_var}}
+          echo " ${{inputs.greeting_var}}"
