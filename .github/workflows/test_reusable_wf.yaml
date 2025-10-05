@@ -5,6 +5,8 @@ jobs:
     uses: ./.github/workflows/reusable_wf.yaml
     with:
       greeting_var: "Namaste, Konnichiwa"
+    secrets:
+      some_secret: ${{ secrets.ACCESS_KEY_ID}}
     
      
       
