@@ -3,7 +3,7 @@ on: push
 
 jobs:
   Service_containers:
-    runs-on: ubuntu_latest
+    runs-on: ubuntu-latest
     services:
       mongodb:
         image: mongo:latest
