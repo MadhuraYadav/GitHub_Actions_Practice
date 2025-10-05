@@ -1,0 +1,12 @@
+name: Custom Actions Workflow
+on: push
+jobs:
+  daily_greetings:
+    runs-on: ubuntu-latest
+    steps:
+      - name: greetings!
+        run: |
+          echo "Hello"
+          echo "How are you?"
+    
+  
