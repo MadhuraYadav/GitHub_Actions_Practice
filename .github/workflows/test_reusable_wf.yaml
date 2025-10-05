@@ -1,0 +1,12 @@
+name: Testing reusable workflow
+on: push
+jobs:
+  reusable_wf_test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Daily greetings
+        run: |
+          echo "Hello, good morning"
+          echo "Hello, good afternoon"
+      - name: Workflow test
+        uses: ./.github/workflows/reusable_wf.yaml
