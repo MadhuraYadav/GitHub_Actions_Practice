@@ -4,7 +4,7 @@ on:
     inputs: 
       greeting_var: 
         description: Used in echo statement
-        required: true
+        #required: true
         type: string
         default: "Hello"
 jobs:
@@ -16,4 +16,4 @@ jobs:
           echo "I am in reusable workflow"
       - name: Input var display
         run: |
-          echo " ${{inputs.greeting_var}}"
+          echo " ${{ inputs.greeting_var}}"
