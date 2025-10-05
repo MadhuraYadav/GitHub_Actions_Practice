@@ -1,4 +1,4 @@
-name: Testing reusable workflow
+name: Testing reusable workflow op
 on: push
 jobs:
   reusable_wf_test:
