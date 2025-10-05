@@ -3,6 +3,8 @@ on: push
 jobs:
   reusable_wf_test:
     uses: ./.github/workflows/reusable_wf.yaml
+    with:
+      greeting_var: "Namaste"
     
      
       
