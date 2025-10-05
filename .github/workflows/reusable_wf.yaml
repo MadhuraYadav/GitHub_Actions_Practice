@@ -1,9 +1,19 @@
 name: Reusable Workflow
-on: workflow_call
+on: 
+  workflow_call:
+    inputs: 
+      greeting_var: 
+        description: Used in echo statement
+        required: true
+        type: string
+        default: "Hello"
 jobs:
   Reusable_workflow_test :
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-latest 
     steps:
-      - name: Daily_greetings
+      - name: Confirm Message
         run: |
           echo "I am in reusable workflow"
+      - name: Input var display
+        run: |
+          echo " ${{inputs.greeting_var}}
