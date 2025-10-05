@@ -1,0 +1,9 @@
+name: 'Daily Greetings through custom actions'
+descriptions: 'I am greeting users through custom actions'
+runs:
+  using: 'composite'
+  steps: 
+    - name: greetings!
+        run: |
+          echo "Hello"
+          echo "How are you?"
