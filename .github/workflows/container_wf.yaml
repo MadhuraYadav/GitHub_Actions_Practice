@@ -1,0 +1,12 @@
+name: Container Testing Workflow
+on: push
+
+jobs:
+  container_testing:
+    runs-on: ubuntu-latest
+    container: nginx
+    steps:
+      - name: Check the current path
+        run: |
+          pwd
+          
