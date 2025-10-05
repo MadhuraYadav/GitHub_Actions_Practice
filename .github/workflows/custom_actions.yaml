@@ -1,9 +1,10 @@
-name: Custom Actions Workflow OP
+name: Custom Actions Workflow
 on: push
+
 jobs:
   daily_greetings:
     runs-on: ubuntu-latest
     steps:
       - name: greetings through custom actions
         uses: ./.github/actions/daily_greets
-  
+
