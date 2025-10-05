@@ -4,7 +4,7 @@ on:
     inputs: 
       greeting_var: 
         description: Used in echo statement
-        #required: true
+        required: true
         type: string
         default: "Hello"
 jobs:
