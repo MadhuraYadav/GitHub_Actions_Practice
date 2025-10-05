@@ -33,4 +33,4 @@ jobs:
       - name: Send the output
         id: op_val
         run: |
-          echo "combined_op=success" > $GITHUB_OUTPUT
+          echo "combined_op=success" >> $GITHUB_OUTPUT
