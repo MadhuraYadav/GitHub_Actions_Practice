@@ -10,9 +10,16 @@ on:
     secrets:
       some_secret: 
         required: true
+    outputs:
+      combined_op: 
+        description: Output combined here
+        value: ${{ jobs.outputs.statement }}
+    
 jobs:
   Reusable_workflow_test :
     runs-on: ubuntu-latest 
+    outputs:
+      statement: ${{ steps.op_val.outputs.combined_op }}
     steps:
       - name: Confirm Message
         run: |
@@ -23,3 +30,7 @@ jobs:
       - name: secret fetching
         run: |
           echo "My little secret ${{secrets.some_secret}}"
+      - name: Send the output
+        id: op_val
+        run: |
+          echo "combined_op=${{ inputs.greeting_var}}${{secrets.some_secret}}" > $GITHUB_OUTPUT
