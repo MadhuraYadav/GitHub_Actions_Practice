@@ -13,7 +13,7 @@ on:
     outputs:
       combined_op: 
         description: Output combined here
-        value: ${{ jobs.outputs.statement }}
+        value: ${{ jobs.Reusable_workflow_test.outputs.statement }}
     
 jobs:
   Reusable_workflow_test :
