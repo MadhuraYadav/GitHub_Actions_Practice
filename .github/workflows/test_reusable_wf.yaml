@@ -7,6 +7,14 @@ jobs:
       greeting_var: "Namaste, Hi"
     secrets:
       some_secret: ${{ secrets.ACCESS_KEY_ID}}
+  op_fetch:
+    runs-on: ubuntu-latest 
+    needs: reusable_wf_test
+    steps:
+      - name: fetch output
+        run: |
+          echo "${{ needs.reusable_wf_test.outputs.combined_op}}"
+    
     
      
       
