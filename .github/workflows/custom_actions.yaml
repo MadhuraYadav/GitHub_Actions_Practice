@@ -1,4 +1,4 @@
-name: Custom Actions Workflow
+name: Custom Actions Workflow OP
 on: push
 jobs:
   daily_greetings:
