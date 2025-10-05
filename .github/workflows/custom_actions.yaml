@@ -5,6 +5,7 @@ jobs:
   daily_greetings:
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v4
       - name: greetings through custom actions
         uses: ./.github/actions/daily_greets
 
