@@ -6,8 +6,9 @@ inputs:
     required: true
     default: "Namaste"
 outputs:
-  description: 'displaying the greetings'
-  value: ${{ steps.greet_token.outputs.J_greet }}
+  J_greeting:
+    description: 'displaying the greetings'
+    value: ${{ steps.greet_token.outputs.J_greet }}
 runs:
   using: 'composite'
   steps: 
