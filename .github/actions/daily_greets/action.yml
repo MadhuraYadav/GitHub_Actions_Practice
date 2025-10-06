@@ -1,10 +1,15 @@
 name: 'Daily Greetings through custom actions'
 description: 'I am greeting users through custom actions'
+inputs:
+  greet:
+    description: 'mentioning daily greetings'
+    required: true
+    default: "Namaste"
 runs:
   using: 'composite'
   steps: 
     - name: greetings!
       run: |
-        echo "Hello"
+        echo "${{ inputs.greet }}"
         echo "How are you?"
       shell: bash
