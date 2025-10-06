@@ -5,11 +5,15 @@ inputs:
     description: 'mentioning daily greetings'
     required: true
     default: "Namaste"
+outputs:
+  description: 'displaying the greetings'
+  value: ${{ steps.greet_token.outputs.J_greet }}
 runs:
   using: 'composite'
   steps: 
     - name: greetings!
+      id: greet_token
       run: |
         echo "${{ inputs.greet }}"
-        echo "How are you?"
+        echo "J_greet=Konnichiwa" >> $GITHUB_OUTPUT
       shell: bash
